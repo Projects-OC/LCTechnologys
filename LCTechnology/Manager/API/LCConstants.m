@@ -11,8 +11,10 @@
 /**
  */
 #ifdef DEBUG
-NSString *const LCBaseUrl = @"url";
+NSString *const LCBaseUrl = @"https://baidu.com/debug";
 #else
-NSString *const LCBaseUrl = @"url";
+NSString *const LCBaseUrl = @"https://baidu.com/relase";
 #endif
 
+/**登录*/
+NSString *const LCLoginUrl = @"api/login";

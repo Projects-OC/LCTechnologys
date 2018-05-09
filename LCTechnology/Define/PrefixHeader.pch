@@ -16,5 +16,6 @@
 #import "LCConstants.h"
 #import "LCNsEnum.h"
 #import "LCDefine.h"
+#import "LCAppConfig.h"
 
 #endif /* PrefixHeader_pch */

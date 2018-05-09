@@ -10,4 +10,5 @@
 
 UIKIT_EXTERN NSString *const LCBaseUrl;
 
-
+/**登录*/
+UIKIT_EXTERN NSString *const LCLoginUrl;

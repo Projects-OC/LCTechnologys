@@ -35,6 +35,10 @@
         self.RequestMethodType = requestMethod;
         self.requestUrlStr = requestUrl;
         self.paramsDic = [NSMutableDictionary dictionary];
+        NSString *token = [LCAppConfig sharedConfig].token;
+        if ([token isNotBlank]) {
+            [self.paramsDic setValue:token forKey:@"token"];
+        }
     }
     return self;
 }

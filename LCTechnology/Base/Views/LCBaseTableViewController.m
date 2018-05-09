@@ -7,6 +7,7 @@
 //
 
 #import "LCBaseTableViewController.h"
+#import "MJRefresh.h"
 
 @interface LCBaseTableViewController ()
 
@@ -16,83 +17,115 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 
-#pragma mark - Table view data source
+- (void)tableViewHeaderRefreshBlock:(void (^)(void))headerRefreshBlock{
+    if (_plainTableView) {
+        _plainTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            headerRefreshBlock();
+        }];
+    }
+    if (_groupTableView) {
+        _groupTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            headerRefreshBlock();
+        }];
+    }
+}
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
+- (void)tableViewFooterRefreshBlock:(void (^)(void))footerRefreshBlock{
+    if (_plainTableView) {
+        _plainTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            footerRefreshBlock();
+        }];
+    }
+    if (_groupTableView) {
+        _groupTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            footerRefreshBlock();
+        }];
+    }
+}
+
+- (void)tableViewHeaderBeginRefreshing{
+    if (_plainTableView) {
+        [_plainTableView.mj_header beginRefreshing];
+    }
+    if (_groupTableView) {
+        [_groupTableView.mj_header beginRefreshing];
+    }
+}
+
+- (void)tableViewEndRefreshing{
+    if (_plainTableView) {
+        if (_plainTableView.mj_header.refreshing) {
+            [_plainTableView.mj_header endRefreshing];
+        }
+        if (_plainTableView.mj_footer.refreshing) {
+            [_plainTableView.mj_footer endRefreshing];
+        }
+    }
+    if (_groupTableView) {
+        if (_groupTableView.mj_header.refreshing) {
+            [_groupTableView.mj_header endRefreshing];
+        }
+        if (_groupTableView.mj_footer.refreshing) {
+            [_groupTableView.mj_footer endRefreshing];
+        }
+    }
+}
+
+-(LCBaseTableView *)plainTableView{
+    if (!_plainTableView) {
+        LCBaseTableView *tableView = [[LCBaseTableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectZero];
+        tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+        tableView.separatorInset = UIEdgeInsetsZero;
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        [self.view addSubview:tableView];
+        _plainTableView = tableView;
+    }
+    return _plainTableView;
+}
+
+-(LCBaseTableView *)groupTableView{
+    if (!_groupTableView) {
+        LCBaseTableView *groupView = [[LCBaseTableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+        groupView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectZero];
+        groupView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+        //groupView.contentInset = UIEdgeInsetsMake(-34, 0, 0, 0);
+        groupView.separatorInset = UIEdgeInsetsZero;
+        groupView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
+        groupView.delegate = self;
+        groupView.dataSource = self;
+        [self.view addSubview:groupView];
+        _groupTableView = groupView;
+    }
+    return _groupTableView;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 0;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return nil;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
+    [self.view endEditing:YES];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
