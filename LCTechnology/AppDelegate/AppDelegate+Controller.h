@@ -10,4 +10,6 @@
 
 @interface AppDelegate (Controller)
 
++ (void)rootViewControllerForWindow:(UIWindow *)window;
+
 @end
