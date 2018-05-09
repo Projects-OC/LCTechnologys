@@ -123,6 +123,13 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		04A5E60C20A2910B00BD7C90 /* ViewModels  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ViewModels ";
+			sourceTree = "<group>";
+		};
 		451D603A2053B244004AC218 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +201,7 @@
 		451D60792053B46C004AC218 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				04A5E60C20A2910B00BD7C90 /* ViewModels  */,
 				452B133F2056758A000CC6F5 /* Models */,
 				452B133E20567584000CC6F5 /* Views */,
 				452B133D2056757C000CC6F5 /* Controllers */,
@@ -846,6 +854,7 @@
 				DEVELOPMENT_TEAM = 7DWBZ36H4U;
 				GCC_PREFIX_HEADER = LCTechnology/Define/PrefixHeader.pch;
 				INFOPLIST_FILE = LCTechnology/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LCTechnology.app.LCTechnology;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -862,6 +871,7 @@
 				DEVELOPMENT_TEAM = 7DWBZ36H4U;
 				GCC_PREFIX_HEADER = LCTechnology/Define/PrefixHeader.pch;
 				INFOPLIST_FILE = LCTechnology/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LCTechnology.app.LCTechnology;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,6 +8,11 @@
 
 #import "LCConstants.h"
 
-/**  */
+/**
+ */
+#ifdef DEBUG
 NSString *const LCBaseUrl = @"url";
+#else
+NSString *const LCBaseUrl = @"url";
+#endif
 
