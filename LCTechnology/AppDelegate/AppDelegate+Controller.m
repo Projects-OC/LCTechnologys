@@ -11,13 +11,23 @@
 
 @implementation AppDelegate (Controller)
 
-+ (void)rootViewControllerForWindow:(UIWindow *)window{
++ (void)rootView{
+    UIWindow *window = LCAPPDELEGATE.window;
     LCViewController *vc = [[LCViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     window.rootViewController = nav;
     window.backgroundColor = [UIColor whiteColor];
     [window makeKeyAndVisible];
 }
+
+- (void)loginVc{
+  
+}
+
+- (void)mainVc{
+ 
+}
+
 
 @end
 

@@ -10,4 +10,6 @@
 
 @interface LCBaseViewController : UIViewController
 
+@property(nonatomic,assign)NSInteger page;
+
 @end

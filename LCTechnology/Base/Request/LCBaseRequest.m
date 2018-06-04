@@ -24,26 +24,30 @@
     return [self initWithMethod:YTKRequestMethodPOST
                      requestUrl:requestUrl];
 }
+
 - (instancetype)initGETWithRequestUrl:(NSString *)requestUrl{
     return [self initWithMethod:YTKRequestMethodGET
                      requestUrl:requestUrl];
 }
 
--(instancetype)initWithMethod:(YTKRequestMethod)requestMethod
-                   requestUrl:(NSString *)requestUrl{
+- (instancetype)initWithMethod:(YTKRequestMethod)requestMethod
+                    requestUrl:(NSString *)requestUrl{
     if (self = [super init]) {
         self.RequestMethodType = requestMethod;
         self.requestUrlStr = requestUrl;
         self.paramsDic = [NSMutableDictionary dictionary];
-        NSString *token = [LCAppConfig sharedConfig].token;
-        if ([token isNotBlank]) {
-            [self.paramsDic setValue:token forKey:@"token"];
-        }
     }
     return self;
 }
 
--(NSTimeInterval)requestTimeoutInterval{
+- (NSDictionary<NSString *,NSString *> *)requestHeaderFieldValueDictionary{
+    if ([LCAppConfig sharedConfig].access_token) {
+        return @{@"X-Token" : [LCAppConfig sharedConfig].access_token};
+    }
+    return nil;
+}
+
+- (NSTimeInterval)requestTimeoutInterval{
     return 30;
 }
 
@@ -58,31 +62,31 @@
     return self.RequestMethodType;
 }
 
--(NSString *)requestUrl{
+- (NSString *)requestUrl{
     return self.requestUrlStr;
 }
 
--(id)requestArgument{
+- (YTKRequestSerializerType)requestSerializerType {
+    return self.serializerType;
+}
+
+- (id)requestArgument{
     return self.paramsDic;
 }
 
-- (void)requestWithSuccess:(void(^)(LCBaseRequestModel *baseModel))success
-                   failure:(void(^)(LCBaseRequestModel *failure))failure{
+- (void)requestWithSuccess:(void(^)(LCBaseRequestModel *baseModel,id responseJSONObject))success
+                   failure:(void(^)(LCBaseRequestModel *baseModel))failure{
     [self startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request){
-         LCBaseRequestModel * baseModel = [LCBaseRequestModel modelWithJSON:request.responseJSONObject];
-         baseModel.request = request;
-         if ([baseModel.status isEqualToString:@"10000"]) {
-             !success?:success(baseModel);
-         }else{
-             !failure?:failure(baseModel);
-         }
-     }failure:^(__kindof YTKBaseRequest * _Nonnull request){
-         LCBaseRequestModel *baseModel = [[LCBaseRequestModel alloc]init];
-         baseModel.message = @"";
-         baseModel.status = @(request.response.statusCode).stringValue;
-         baseModel.request = request;
-         !failure?:failure(baseModel);
-     }];
+        LCLog(@"%@",request);
+        LCBaseRequestModel *baseModel = [LCBaseRequestModel modelWithJSON:request.responseJSONObject];
+        if (baseModel.code == 200) {
+            !success?:success(baseModel,request.responseJSONObject);
+        }else{
+            !failure?:failure(baseModel);
+        }
+    }failure:^(__kindof YTKBaseRequest * _Nonnull request){
+      
+    }];
 }
 
 @end

@@ -17,9 +17,10 @@
  */
 @property (nonatomic,readwrite,assign,getter=isLogined) BOOL logined;
 
-/**
- token
- */
-@property (nonatomic ,copy) NSString *token;
+
+/** 账户 */
+@property (nonatomic,copy) NSString *account;
+/** token */
+@property (nonatomic,copy) NSString *access_token;
 
 @end

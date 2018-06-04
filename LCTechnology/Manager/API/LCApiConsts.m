@@ -6,7 +6,7 @@
 //  Copyright © 2018年 lc. All rights reserved.
 //
 
-#import "LCConstants.h"
+#import "LCApiConsts.h"
 
 /**
  */

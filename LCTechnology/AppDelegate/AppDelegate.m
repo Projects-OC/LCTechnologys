@@ -11,11 +11,16 @@
 
 @interface AppDelegate ()
 
+@property(nonatomic,strong)YYReachability *reachability;
+
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[YTKNetworkConfig sharedConfig] setBaseUrl:LCBaseUrl];
+    [AppDelegate rootView];
+    [self config];
     return YES;
 }
 
@@ -46,6 +51,65 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)config{
+    //监听网络状态
+    @weakify(self)
+    self.reachability.notifyBlock = ^(YYReachability *reachability){
+        [weak_self networkChanged:reachability];
+    };
+}
 
+-(void)networkChanged:(YYReachability*)reachability{
+    YYReachabilityStatus status = reachability.status;
+    switch (status) {
+        case YYReachabilityStatusNone:{
+            NSString *errStr = @"请打开设置,允许此应用使用网络";
+            LCLog(@"网络服务已断开");
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:errStr
+                                                                                     message:@""
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"打开网络" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                NSURL * url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                if ( [[UIApplication sharedApplication] canOpenURL: url] ) {
+                    NSURL*url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                    [[UIApplication sharedApplication] openURL:url];
+                }
+            }]];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
+        }
+            break;
+        case YYReachabilityStatusWiFi:{
+            LCLog(@"WiFi");
+        }
+            break;
+        case YYReachabilityStatusWWAN:{
+            LCLog(@"移动网络");
+            YYReachabilityWWANStatus wwStatus = reachability.wwanStatus;
+            switch (wwStatus) {
+                case YYReachabilityWWANStatus2G:
+                    LCLog(@"2G网络");
+                    break;
+                case YYReachabilityWWANStatus3G:
+                    LCLog(@"3G网络");
+                    break;
+                case YYReachabilityWWANStatus4G:
+                    LCLog(@"4G网络");
+                    break;
+                case YYReachabilityWWANStatusNone:
+                    LCLog(@"无网络");
+                    break;
+                default:
+                    break;
+            }
+        }
+            break;
+        default:
+            break;
+    }
+    if (_networkStatusBlock) {
+        _networkStatusBlock(status);
+    }
+}
 
 @end

@@ -22,9 +22,9 @@
 
 - (void)loginRequeset{
     LCLoginRequest *request = [LCLoginRequest loginWithUserName:@"userName" passWord:@"passWord"];
-    [request requestWithSuccess:^(LCBaseRequestModel *baseModel) {
+    [request requestWithSuccess:^(LCBaseRequestModel *baseModel, id responseJSONObject) {
         
-    } failure:^(LCBaseRequestModel *failure) {
+    } failure:^(LCBaseRequestModel *baseModel) {
         
     }];
 }

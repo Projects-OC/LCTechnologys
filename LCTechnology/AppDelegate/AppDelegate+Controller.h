@@ -10,6 +10,10 @@
 
 @interface AppDelegate (Controller)
 
-+ (void)rootViewControllerForWindow:(UIWindow *)window;
++ (void)rootView;
+
+- (void)loginVc;
+
+- (void)mainVc;
 
 @end

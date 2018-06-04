@@ -8,6 +8,8 @@
 
 #import "LCBaseTableViewController.h"
 #import "MJRefresh.h"
+#import "LCBaseRequest.h"
+#import "LCBaseRequestModel.h"
 
 @interface LCBaseTableViewController ()
 
@@ -15,22 +17,57 @@
 
 @implementation LCBaseTableViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (NSMutableArray *)datas{
+    if (!_datas) {
+        _datas = [[NSMutableArray alloc] init];
+    }
+    return _datas;
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
 
+- (void)pageModelData:(NSMutableArray *)modelData
+            baseModel:(LCBaseRequestModel *)baseModel{
+    [self pageLoading];
+    if (modelData && modelData.count != 0) {
+        if (self.page == 1) {
+            [self.datas removeAllObjects];
+        }
+        [self.datas addObjectsFromArray:modelData];
+        [self.plainTableView reloadData];
+    }
+    if (baseModel.total_page == 0 || baseModel.total_page == self.page) {
+        self.plainTableView.mj_footer.state = MJRefreshStateNoMoreData;
+    }
+    [self tableViewEndRefreshing];
+}
+
+- (void)pageLoading{
+    if (self.page == 1) {
+        self.plainTableView.loading = NO;
+    }
+}
+
+- (void)pageFailrueWithMessage:(NSString *)message{
+    [self pageLoading];
+    [self tableViewEndRefreshing];
+    LCShowPrompt(message)
+}
+
 - (void)tableViewHeaderRefreshBlock:(void (^)(void))headerRefreshBlock{
     if (_plainTableView) {
+        @weakify(self)
         _plainTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            weak_self.page = 1;
             headerRefreshBlock();
         }];
     }
     if (_groupTableView) {
+        @weakify(self)
         _groupTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            weak_self.page = 1;
             headerRefreshBlock();
         }];
     }
@@ -38,12 +75,16 @@
 
 - (void)tableViewFooterRefreshBlock:(void (^)(void))footerRefreshBlock{
     if (_plainTableView) {
+        @weakify(self)
         _plainTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            weak_self.page ++;
             footerRefreshBlock();
         }];
     }
     if (_groupTableView) {
+        @weakify(self)
         _groupTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            weak_self.page ++;
             footerRefreshBlock();
         }];
     }
@@ -96,7 +137,6 @@
         LCBaseTableView *groupView = [[LCBaseTableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
         groupView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectZero];
         groupView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
-        //groupView.contentInset = UIEdgeInsetsMake(-34, 0, 0, 0);
         groupView.separatorInset = UIEdgeInsetsZero;
         groupView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
         groupView.delegate = self;

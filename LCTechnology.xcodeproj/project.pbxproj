@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045E6D7F20C4EC0000052E16 /* LCHudBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E6D7A20C4EC0000052E16 /* LCHudBox.m */; };
+		045E6D8020C4EC0000052E16 /* LCLoadingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E6D7C20C4EC0000052E16 /* LCLoadingBox.m */; };
+		045E6D8120C4EC0000052E16 /* LCPromptBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E6D7E20C4EC0000052E16 /* LCPromptBox.m */; };
+		045E6D8420C4EC3300052E16 /* LCConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E6D8220C4EC3200052E16 /* LCConsts.m */; };
+		045E6D8720C4EC6900052E16 /* UIImage+LC.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E6D8620C4EC6900052E16 /* UIImage+LC.m */; };
+		045E6D8B20C4EC9900052E16 /* UIImageView+LC.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E6D8A20C4EC9900052E16 /* UIImageView+LC.m */; };
+		045E6D8E20C4ECC300052E16 /* NSString+LC.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E6D8C20C4ECC300052E16 /* NSString+LC.m */; };
 		045F405D207C4B3E00C20569 /* LCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F405C207C4B3E00C20569 /* LCBaseViewController.m */; };
 		045F4060207C4B4D00C20569 /* LCBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F405F207C4B4D00C20569 /* LCBaseTableViewController.m */; };
 		045F4063207C4B7100C20569 /* LCBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F4062207C4B7100C20569 /* LCBaseTableView.m */; };
@@ -46,7 +53,7 @@
 		451D606B2053B244004AC218 /* LCTechnologyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 451D606A2053B244004AC218 /* LCTechnologyUITests.m */; };
 		452B131D20561B13000CC6F5 /* UIAlertAction+LC.m in Sources */ = {isa = PBXBuildFile; fileRef = 452B131C20561B13000CC6F5 /* UIAlertAction+LC.m */; };
 		452B133420561CAA000CC6F5 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 452B133320561CAA000CC6F5 /* Foundation+Log.m */; };
-		45DB4B2020577625006AB81C /* LCConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DB4B1F20577625006AB81C /* LCConstants.m */; };
+		45DB4B2020577625006AB81C /* LCApiConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DB4B1F20577625006AB81C /* LCApiConsts.m */; };
 		7788BAB2822BC51C6F681F13 /* Pods_LCTechnology.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF61D6987311C0E8D49F8F75 /* Pods_LCTechnology.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +76,20 @@
 
 /* Begin PBXFileReference section */
 		03CBB407F36DCDC758342490 /* Pods-LCTechnology.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCTechnology.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCTechnology/Pods-LCTechnology.release.xcconfig"; sourceTree = "<group>"; };
+		045E6D7920C4EC0000052E16 /* LCHudBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHudBox.h; sourceTree = "<group>"; };
+		045E6D7A20C4EC0000052E16 /* LCHudBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHudBox.m; sourceTree = "<group>"; };
+		045E6D7B20C4EC0000052E16 /* LCLoadingBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLoadingBox.h; sourceTree = "<group>"; };
+		045E6D7C20C4EC0000052E16 /* LCLoadingBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLoadingBox.m; sourceTree = "<group>"; };
+		045E6D7D20C4EC0000052E16 /* LCPromptBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPromptBox.h; sourceTree = "<group>"; };
+		045E6D7E20C4EC0000052E16 /* LCPromptBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPromptBox.m; sourceTree = "<group>"; };
+		045E6D8220C4EC3200052E16 /* LCConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCConsts.m; sourceTree = "<group>"; };
+		045E6D8320C4EC3200052E16 /* LCConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCConsts.h; sourceTree = "<group>"; };
+		045E6D8520C4EC6900052E16 /* UIImage+LC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LC.h"; sourceTree = "<group>"; };
+		045E6D8620C4EC6900052E16 /* UIImage+LC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LC.m"; sourceTree = "<group>"; };
+		045E6D8920C4EC9900052E16 /* UIImageView+LC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LC.h"; sourceTree = "<group>"; };
+		045E6D8A20C4EC9900052E16 /* UIImageView+LC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LC.m"; sourceTree = "<group>"; };
+		045E6D8C20C4ECC300052E16 /* NSString+LC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LC.m"; sourceTree = "<group>"; };
+		045E6D8D20C4ECC300052E16 /* NSString+LC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LC.h"; sourceTree = "<group>"; };
 		045F405B207C4B3E00C20569 /* LCBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCBaseViewController.h; sourceTree = "<group>"; };
 		045F405C207C4B3E00C20569 /* LCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCBaseViewController.m; sourceTree = "<group>"; };
 		045F405E207C4B4D00C20569 /* LCBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCBaseTableViewController.h; sourceTree = "<group>"; };
@@ -149,8 +170,8 @@
 		45DB4B1120576F43006AB81C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		45DB4B1920577000006AB81C /* LCDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCDefine.h; sourceTree = "<group>"; };
 		45DB4B1A20577168006AB81C /* LCNsEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNsEnum.h; sourceTree = "<group>"; };
-		45DB4B1F20577625006AB81C /* LCConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCConstants.m; sourceTree = "<group>"; };
-		45DB4B2120577659006AB81C /* LCConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCConstants.h; sourceTree = "<group>"; };
+		45DB4B1F20577625006AB81C /* LCApiConsts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCApiConsts.m; sourceTree = "<group>"; };
+		45DB4B2120577659006AB81C /* LCApiConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCApiConsts.h; sourceTree = "<group>"; };
 		AF61D6987311C0E8D49F8F75 /* Pods_LCTechnology.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCTechnology.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7BE9132D88A20674383E2E6 /* Pods-LCTechnology.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCTechnology.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCTechnology/Pods-LCTechnology.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +202,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045E6D7820C4EC0000052E16 /* HudBox */ = {
+			isa = PBXGroup;
+			children = (
+				045E6D7920C4EC0000052E16 /* LCHudBox.h */,
+				045E6D7A20C4EC0000052E16 /* LCHudBox.m */,
+				045E6D7B20C4EC0000052E16 /* LCLoadingBox.h */,
+				045E6D7C20C4EC0000052E16 /* LCLoadingBox.m */,
+				045E6D7D20C4EC0000052E16 /* LCPromptBox.h */,
+				045E6D7E20C4EC0000052E16 /* LCPromptBox.m */,
+			);
+			path = HudBox;
+			sourceTree = "<group>";
+		};
+		045E6D8820C4EC8600052E16 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				045E6D8920C4EC9900052E16 /* UIImageView+LC.h */,
+				045E6D8A20C4EC9900052E16 /* UIImageView+LC.m */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
 		045F4067207C557E00C20569 /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +457,7 @@
 		451D607D2053B4C1004AC218 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				045E6D7820C4EC0000052E16 /* HudBox */,
 				04A5E65E20A29B2C00BD7C90 /* Refresh */,
 			);
 			path = General;
@@ -425,6 +469,8 @@
 				45DB4B1120576F43006AB81C /* PrefixHeader.pch */,
 				45DB4B1A20577168006AB81C /* LCNsEnum.h */,
 				45DB4B1920577000006AB81C /* LCDefine.h */,
+				045E6D8320C4EC3200052E16 /* LCConsts.h */,
+				045E6D8220C4EC3200052E16 /* LCConsts.m */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -456,6 +502,7 @@
 		452B131720561A7E000CC6F5 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				045E6D8820C4EC8600052E16 /* UIImageView */,
 				452B132720561BA5000CC6F5 /* UIViewController */,
 				452B132620561BA0000CC6F5 /* UIView */,
 				452B132520561B95000CC6F5 /* UILabel */,
@@ -517,6 +564,8 @@
 		452B132420561B8A000CC6F5 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
+				045E6D8520C4EC6900052E16 /* UIImage+LC.h */,
+				045E6D8620C4EC6900052E16 /* UIImage+LC.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -552,6 +601,8 @@
 		452B132920561BF0000CC6F5 /* NSString */ = {
 			isa = PBXGroup;
 			children = (
+				045E6D8D20C4ECC300052E16 /* NSString+LC.h */,
+				045E6D8C20C4ECC300052E16 /* NSString+LC.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -640,8 +691,8 @@
 		45DB4B1B205772BA006AB81C /* API */ = {
 			isa = PBXGroup;
 			children = (
-				45DB4B2120577659006AB81C /* LCConstants.h */,
-				45DB4B1F20577625006AB81C /* LCConstants.m */,
+				45DB4B2120577659006AB81C /* LCApiConsts.h */,
+				45DB4B1F20577625006AB81C /* LCApiConsts.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -738,7 +789,7 @@
 			attributes = {
 				CLASSPREFIX = LC;
 				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = lc;
+				ORGANIZATIONNAME = LCTechnology;
 				TargetAttributes = {
 					451D60422053B244004AC218 = {
 						CreatedOnToolsVersion = 9.2;
@@ -857,21 +908,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				452B133420561CAA000CC6F5 /* Foundation+Log.m in Sources */,
+				045E6D8B20C4EC9900052E16 /* UIImageView+LC.m in Sources */,
 				04A5E69220A29B2C00BD7C90 /* MJRefreshAutoGifFooter.m in Sources */,
+				045E6D8420C4EC3300052E16 /* LCConsts.m in Sources */,
 				04A5E69A20A29B2C00BD7C90 /* MJRefreshStateHeader.m in Sources */,
 				04A5E69720A29B2C00BD7C90 /* MJRefreshBackStateFooter.m in Sources */,
-				45DB4B2020577625006AB81C /* LCConstants.m in Sources */,
+				45DB4B2020577625006AB81C /* LCApiConsts.m in Sources */,
 				451D60562053B244004AC218 /* main.m in Sources */,
 				04A5E69D20A29B2C00BD7C90 /* NSBundle+MJRefresh.m in Sources */,
 				045F406A207C55AB00C20569 /* LCBaseRequestModel.m in Sources */,
 				045F406D207C566000C20569 /* LCBaseRequest.m in Sources */,
 				045F405D207C4B3E00C20569 /* LCBaseViewController.m in Sources */,
 				04A5E69520A29B2C00BD7C90 /* MJRefreshBackGifFooter.m in Sources */,
+				045E6D8020C4EC0000052E16 /* LCLoadingBox.m in Sources */,
+				045E6D8E20C4ECC300052E16 /* NSString+LC.m in Sources */,
 				04A5E69420A29B2C00BD7C90 /* MJRefreshAutoStateFooter.m in Sources */,
 				04A5E69920A29B2C00BD7C90 /* MJRefreshNormalHeader.m in Sources */,
 				04A5E6A020A29B2C00BD7C90 /* UIView+MJExtension.m in Sources */,
 				045F4063207C4B7100C20569 /* LCBaseTableView.m in Sources */,
 				04A5E61220A2930100BD7C90 /* LCLoginRequest.m in Sources */,
+				045E6D8120C4EC0000052E16 /* LCPromptBox.m in Sources */,
+				045E6D8720C4EC6900052E16 /* UIImage+LC.m in Sources */,
 				04A5E69C20A29B2C00BD7C90 /* MJRefreshConst.m in Sources */,
 				04A5E61620A2958400BD7C90 /* LCAppConfig.m in Sources */,
 				451D60482053B244004AC218 /* AppDelegate.m in Sources */,
@@ -879,6 +936,7 @@
 				04A5E61920A2976300BD7C90 /* LCViewController.m in Sources */,
 				045F4066207C4BA100C20569 /* LCBaseTableViewCell.m in Sources */,
 				04A5E68E20A29B2C00BD7C90 /* MJRefreshBackFooter.m in Sources */,
+				045E6D7F20C4EC0000052E16 /* LCHudBox.m in Sources */,
 				04A5E69020A29B2C00BD7C90 /* MJRefreshFooter.m in Sources */,
 				04A5E69F20A29B2C00BD7C90 /* UIScrollView+MJRefresh.m in Sources */,
 				04A5E60F20A2927C00BD7C90 /* AppDelegate+Controller.m in Sources */,
@@ -1061,7 +1119,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LCTechnology.app.LCTechnology;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1078,7 +1136,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LCTechnology.app.LCTechnology;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

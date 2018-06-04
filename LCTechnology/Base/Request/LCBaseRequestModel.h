@@ -7,28 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
-@class LCBaseRequest;
 
 @interface LCBaseRequestModel : NSObject
 
 /**
  返回内容
  */
-@property (nonatomic, copy) id data;
+@property (nonatomic,copy) id data;
 
 /**
  信息
  */
-@property (nonatomic, copy) NSString * message;
+@property (nonatomic,copy) NSString *message;
 
 /**
  状态码
  */
-@property (nonatomic, copy) NSString * status;
+@property (nonatomic,assign) NSInteger code;
 
 /**
- 网络请求类
+ 每页总条数
  */
-@property (nonatomic ,strong) LCBaseRequest *request;
+@property (nonatomic,assign) NSInteger total;
+
+/**
+ 总页数
+ */
+@property (nonatomic,assign) NSInteger total_page;
 
 @end

@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+/*网络状态实时监控*/
+@property(nonatomic,copy) void (^networkStatusBlock) (YYReachabilityStatus networkStatus);
 
 @end
 

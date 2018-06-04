@@ -11,36 +11,27 @@
 
 @interface LCBaseRequest : YTKRequest
 
-/**
- 参数
- */
+/** 参数 */
 @property (nonatomic,strong) NSMutableDictionary *paramsDic;
 
-/**
- url
- */
+/** 请求序列化器类型 */
+@property (nonatomic,assign) YTKRequestSerializerType serializerType;
+
+/** url */
 @property (nonatomic,copy) NSString *requestBaseUrl;
 
-/**
- post请求
- */
+/** post请求 */
 - (instancetype)initPOSTWithRequestUrl:(NSString *)requestUrl;
 
-/**
- get请求
- */
+/** get请求 */
 - (instancetype)initGETWithRequestUrl:(NSString *)requestUrl;
 
-/**
- 自选请求类型
- */
+/** 自选请求类型 */
 -(instancetype)initWithMethod:(YTKRequestMethod)requestMethod
                    requestUrl:(NSString *)requestUrl;
 
-/**
- 开始请求
- */
-- (void)requestWithSuccess:(void(^)(LCBaseRequestModel *baseModel))success
-                   failure:(void(^)(LCBaseRequestModel *failure))failure;
+/** 开始请求 */
+- (void)requestWithSuccess:(void(^)(LCBaseRequestModel *baseModel,id responseJSONObject))success
+                   failure:(void(^)(LCBaseRequestModel *baseModel))failure;
 
 @end
