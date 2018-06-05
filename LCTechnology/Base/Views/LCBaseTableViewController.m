@@ -31,7 +31,7 @@
 - (void)pageModelData:(NSMutableArray *)modelData
             baseModel:(LCBaseRequestModel *)baseModel{
     [self pageLoading];
-    if (modelData && modelData.count != 0) {
+    if (modelData) {
         if (self.page == 1) {
             [self.datas removeAllObjects];
         }
