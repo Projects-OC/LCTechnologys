@@ -31,6 +31,7 @@
     self.delaysContentTouches = NO;
     self.canCancelContentTouches = YES;
     self.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     
     self.loading = YES;
     self.emptyDataSetSource = self;
@@ -40,9 +41,9 @@
     @weakify(self)
     LCAPPDELEGATE.networkStatusBlock = ^(YYReachabilityStatus networkStatus) {
         if (networkStatus != YYReachabilityStatusNone) {
-            weak_self.emptyTitle = @"暂无数据";
+            weak_self.emptyTitle = LCMessageEmpty;
         }else{
-            weak_self.emptyTitle = @"网络错误，请检查网络状态后重试";
+            weak_self.emptyTitle = LCMessageNetworkError;
         }
     };
 }

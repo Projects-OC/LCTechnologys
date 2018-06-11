@@ -9,3 +9,7 @@
 #import <UIKit/UIKit.h>
 
 UIKIT_EXTERN NSString *const LCNotificationArea;
+
+UIKIT_EXTERN NSString *const LCMessageEmpty;
+UIKIT_EXTERN NSString *const LCMessageNetworkError;
+UIKIT_EXTERN NSString *const LCMessageRequestError;

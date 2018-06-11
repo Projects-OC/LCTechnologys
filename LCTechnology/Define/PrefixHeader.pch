@@ -18,6 +18,7 @@
 #import "LCNsEnum.h"
 #import "LCDefine.h"
 #import "LCAppConfig.h"
+#import "LCConsts.h"
 
 #import "LCPromptBox.h"
 #import "LCLoadingBox.h"

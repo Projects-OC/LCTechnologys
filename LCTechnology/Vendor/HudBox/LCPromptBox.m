@@ -26,7 +26,7 @@
 
 + (void)showPromptBoxWithMessage:(NSString *)message {
     if (!message) {
-        message = @"网络错误";
+        message = LCMessageRequestError;
     }
     LCHideLoading
 	[self shared].interaction = YES;

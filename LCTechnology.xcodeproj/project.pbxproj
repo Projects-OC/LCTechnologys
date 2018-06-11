@@ -377,7 +377,7 @@
 				451D607C2053B4AD004AC218 /* Base */,
 				451D607A2053B481004AC218 /* Manager */,
 				451D607B2053B48F004AC218 /* Utils */,
-				451D607D2053B4C1004AC218 /* General */,
+				451D607D2053B4C1004AC218 /* Vendor */,
 				451D607E2053B4D8004AC218 /* Define */,
 				451D604C2053B244004AC218 /* Main.storyboard */,
 				451D60512053B244004AC218 /* LaunchScreen.storyboard */,
@@ -454,13 +454,13 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		451D607D2053B4C1004AC218 /* General */ = {
+		451D607D2053B4C1004AC218 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
 				045E6D7820C4EC0000052E16 /* HudBox */,
 				04A5E65E20A29B2C00BD7C90 /* Refresh */,
 			);
-			path = General;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		451D607E2053B4D8004AC218 /* Define */ = {
