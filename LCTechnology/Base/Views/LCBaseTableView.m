@@ -77,7 +77,7 @@
 }
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView{
-    NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"PingFang-SC-Medium" size:14.0],
+    NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:14],
                                  NSForegroundColorAttributeName:[UIColor blackColor]};
     
     return [[NSAttributedString alloc] initWithString:_emptyTitle attributes:attributes];
