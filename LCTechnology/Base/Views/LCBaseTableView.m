@@ -2,7 +2,7 @@
 //  LCBaseTableView.m
 //  LCTechnology
 //
-//  Created by Mac on 2018/4/10.
+//  Created by mf on 2018/4/10.
 //  Copyright © 2018年 lc. All rights reserved.
 //
 
@@ -40,10 +40,11 @@
     
     @weakify(self)
     LCAPPDELEGATE.networkStatusBlock = ^(YYReachabilityStatus networkStatus) {
+        @strongify(self)
         if (networkStatus != YYReachabilityStatusNone) {
-            weak_self.emptyTitle = LCMessageEmpty;
+            self.emptyTitle = LCMessageEmpty;
         }else{
-            weak_self.emptyTitle = LCMessageNetworkError;
+            self.emptyTitle = LCMessageNetworkError;
         }
     };
 }

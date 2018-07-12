@@ -2,7 +2,7 @@
 //  LCLoginRequest.m
 //  LCTechnology
 //
-//  Created by Mac on 2018/5/9.
+//  Created by mf on 2018/5/9.
 //  Copyright © 2018年 lc. All rights reserved.
 //
 
@@ -14,7 +14,7 @@
                              passWord:(NSString *)passWord{
     LCLoginRequest *request = [[LCLoginRequest alloc] initPOSTWithRequestUrl:LCLoginUrl];
     [request.paramsDic setValue:userName forKey:NSStringFromSelector(@selector(userName))];
-    [request.paramsDic setValue:passWord forKey:NSStringFromSelector(@selector(passWord))];
+    [request.paramsDic setValue:passWord forKey:NSStringFromSelector(@selector(password))];
     return request;
 }
 

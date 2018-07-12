@@ -2,7 +2,7 @@
 //  LCHudBox.m
 //  UCZProgressView
 //
-//  Created by Mac on 2018/4/24.
+//  Created by mf on 2018/4/24.
 //  Copyright © 2018年 kishikawa katsumi. All rights reserved.
 //
 

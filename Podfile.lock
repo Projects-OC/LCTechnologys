@@ -15,7 +15,12 @@ PODS:
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
   - DZNEmptyDataSet (1.8.1)
+  - FBRetainCycleDetector (0.1.4)
   - Masonry (1.1.0)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
+  - ReactiveObjC (3.1.0)
+  - TPKeyboardAvoiding (1.3.2)
   - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
   - YYKit (1.0.9):
@@ -26,6 +31,9 @@ DEPENDENCIES:
   - AFNetworking
   - DZNEmptyDataSet
   - Masonry
+  - MLeaksFinder
+  - ReactiveObjC
+  - TPKeyboardAvoiding
   - YTKNetwork
   - YYKit
 
@@ -33,17 +41,25 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - DZNEmptyDataSet
+    - FBRetainCycleDetector
     - Masonry
+    - MLeaksFinder
+    - ReactiveObjC
+    - TPKeyboardAvoiding
     - YTKNetwork
     - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 06ae7f22294363935e1971c44286cdb05109edec
+PODFILE CHECKSUM: 6eae42df94b78890db1e99d1a813e0c2926ebf5d
 
 COCOAPODS: 1.5.0

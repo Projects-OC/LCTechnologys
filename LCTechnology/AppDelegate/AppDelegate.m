@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  LCTechnology
 //
-//  Created by wff on 2018/3/10.
+//  Created by mf on 2018/3/10.
 //  Copyright © 2018年 lc. All rights reserved.
 //
 
@@ -55,7 +55,8 @@
     //监听网络状态
     @weakify(self)
     self.reachability.notifyBlock = ^(YYReachability *reachability){
-        [weak_self networkChanged:reachability];
+        @strongify(self)
+        [self networkChanged:reachability];
     };
 }
 

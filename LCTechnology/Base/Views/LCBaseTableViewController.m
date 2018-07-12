@@ -2,7 +2,7 @@
 //  LCBaseTableViewController.m
 //  LCTechnology
 //
-//  Created by Mac on 2018/4/10.
+//  Created by mf on 2018/4/10.
 //  Copyright © 2018年 lc. All rights reserved.
 //
 
@@ -60,14 +60,16 @@
     if (_plainTableView) {
         @weakify(self)
         _plainTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            weak_self.page = 1;
+            @strongify(self)
+            self.page = 1;
             headerRefreshBlock();
         }];
     }
     if (_groupTableView) {
         @weakify(self)
         _groupTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            weak_self.page = 1;
+            @strongify(self)
+            self.page = 1;
             headerRefreshBlock();
         }];
     }
@@ -77,14 +79,16 @@
     if (_plainTableView) {
         @weakify(self)
         _plainTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-            weak_self.page ++;
+            @strongify(self)
+            self.page ++;
             footerRefreshBlock();
         }];
     }
     if (_groupTableView) {
         @weakify(self)
         _groupTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-            weak_self.page ++;
+            @strongify(self)
+            self.page ++;
             footerRefreshBlock();
         }];
     }

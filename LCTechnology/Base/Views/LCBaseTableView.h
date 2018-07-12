@@ -2,19 +2,20 @@
 //  LCBaseTableView.h
 //  LCTechnology
 //
-//  Created by Mac on 2018/4/10.
+//  Created by mf on 2018/4/10.
 //  Copyright © 2018年 lc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import <TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h>
 
-@interface LCBaseTableView : UITableView<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+@interface LCBaseTableView : TPKeyboardAvoidingTableView<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
-/** 空数据背景图竖直方向偏移 */
+/**空数据背景图竖直方向偏移*/
 @property(nonatomic,assign)CGFloat verticalOffset;
 
-/** 空数据提示信息 */
+/**空数据提示信息*/
 @property (nonatomic,copy) NSString *emptyTitle;
 
 @property (nonatomic, getter=isLoading) BOOL loading;
