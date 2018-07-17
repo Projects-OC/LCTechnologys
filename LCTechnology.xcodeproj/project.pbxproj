@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04469F9B20FDC79A00879CCE /* UIColor+LC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04469F9920FDC79A00879CCE /* UIColor+LC.m */; };
+		04469F9E20FDC7A400879CCE /* UIBezierPath+LC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04469F9D20FDC7A400879CCE /* UIBezierPath+LC.m */; };
+		04469FA120FDC7B500879CCE /* UIScrollView+LC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04469FA020FDC7B400879CCE /* UIScrollView+LC.m */; };
+		04469FA420FDC83C00879CCE /* LCBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04469FA220FDC83B00879CCE /* LCBaseNavigationController.m */; };
 		045E6D7F20C4EC0000052E16 /* LCHudBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E6D7A20C4EC0000052E16 /* LCHudBox.m */; };
 		045E6D8020C4EC0000052E16 /* LCLoadingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E6D7C20C4EC0000052E16 /* LCLoadingBox.m */; };
 		045E6D8120C4EC0000052E16 /* LCPromptBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E6D7E20C4EC0000052E16 /* LCPromptBox.m */; };
@@ -76,6 +80,14 @@
 
 /* Begin PBXFileReference section */
 		03CBB407F36DCDC758342490 /* Pods-LCTechnology.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCTechnology.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCTechnology/Pods-LCTechnology.release.xcconfig"; sourceTree = "<group>"; };
+		04469F9920FDC79A00879CCE /* UIColor+LC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LC.m"; sourceTree = "<group>"; };
+		04469F9A20FDC79A00879CCE /* UIColor+LC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LC.h"; sourceTree = "<group>"; };
+		04469F9C20FDC7A300879CCE /* UIBezierPath+LC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+LC.h"; sourceTree = "<group>"; };
+		04469F9D20FDC7A400879CCE /* UIBezierPath+LC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+LC.m"; sourceTree = "<group>"; };
+		04469F9F20FDC7B400879CCE /* UIScrollView+LC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+LC.h"; sourceTree = "<group>"; };
+		04469FA020FDC7B400879CCE /* UIScrollView+LC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LC.m"; sourceTree = "<group>"; };
+		04469FA220FDC83B00879CCE /* LCBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaseNavigationController.m; sourceTree = "<group>"; };
+		04469FA320FDC83C00879CCE /* LCBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaseNavigationController.h; sourceTree = "<group>"; };
 		045E6D7920C4EC0000052E16 /* LCHudBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHudBox.h; sourceTree = "<group>"; };
 		045E6D7A20C4EC0000052E16 /* LCHudBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHudBox.m; sourceTree = "<group>"; };
 		045E6D7B20C4EC0000052E16 /* LCLoadingBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLoadingBox.h; sourceTree = "<group>"; };
@@ -202,6 +214,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04469F9720FDC74700879CCE /* UIBezierPath */ = {
+			isa = PBXGroup;
+			children = (
+				04469F9C20FDC7A300879CCE /* UIBezierPath+LC.h */,
+				04469F9D20FDC7A400879CCE /* UIBezierPath+LC.m */,
+			);
+			path = UIBezierPath;
+			sourceTree = "<group>";
+		};
+		04469F9820FDC77100879CCE /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				04469F9F20FDC7B400879CCE /* UIScrollView+LC.h */,
+				04469FA020FDC7B400879CCE /* UIScrollView+LC.m */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		04469FA520FDC97800879CCE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				04A5E60C20A2910B00BD7C90 /* ViewModels  */,
+				452B133F2056758A000CC6F5 /* Models */,
+				452B133E20567584000CC6F5 /* Views */,
+				452B133D2056757C000CC6F5 /* Controllers */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		045E6D7820C4EC0000052E16 /* HudBox */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,7 +417,7 @@
 				451D60792053B46C004AC218 /* Modules */,
 				451D607C2053B4AD004AC218 /* Base */,
 				451D607A2053B481004AC218 /* Manager */,
-				451D607B2053B48F004AC218 /* Utils */,
+				452B131520561A5E000CC6F5 /* Additions */,
 				451D607D2053B4C1004AC218 /* Vendor */,
 				451D607E2053B4D8004AC218 /* Define */,
 				451D604C2053B244004AC218 /* Main.storyboard */,
@@ -419,10 +460,7 @@
 		451D60792053B46C004AC218 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				04A5E60C20A2910B00BD7C90 /* ViewModels  */,
-				452B133F2056758A000CC6F5 /* Models */,
-				452B133E20567584000CC6F5 /* Views */,
-				452B133D2056757C000CC6F5 /* Controllers */,
+				04469FA520FDC97800879CCE /* Login */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -435,14 +473,6 @@
 				45DB4B1B205772BA006AB81C /* API */,
 			);
 			path = Manager;
-			sourceTree = "<group>";
-		};
-		451D607B2053B48F004AC218 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				452B131520561A5E000CC6F5 /* Category */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		451D607C2053B4AD004AC218 /* Base */ = {
@@ -475,13 +505,13 @@
 			path = Define;
 			sourceTree = "<group>";
 		};
-		452B131520561A5E000CC6F5 /* Category */ = {
+		452B131520561A5E000CC6F5 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
 				452B131720561A7E000CC6F5 /* UIKit */,
 				452B131620561A65000CC6F5 /* NSFoundation */,
 			);
-			path = Category;
+			path = Additions;
 			sourceTree = "<group>";
 		};
 		452B131620561A65000CC6F5 /* NSFoundation */ = {
@@ -502,6 +532,8 @@
 		452B131720561A7E000CC6F5 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				04469F9820FDC77100879CCE /* UIScrollView */,
+				04469F9720FDC74700879CCE /* UIBezierPath */,
 				045E6D8820C4EC8600052E16 /* UIImageView */,
 				452B132720561BA5000CC6F5 /* UIViewController */,
 				452B132620561BA0000CC6F5 /* UIView */,
@@ -557,6 +589,8 @@
 		452B132320561B81000CC6F5 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
+				04469F9A20FDC79A00879CCE /* UIColor+LC.h */,
+				04469F9920FDC79A00879CCE /* UIColor+LC.m */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -661,6 +695,8 @@
 				045F4062207C4B7100C20569 /* LCBaseTableView.m */,
 				045F4064207C4BA100C20569 /* LCBaseTableViewCell.h */,
 				045F4065207C4BA100C20569 /* LCBaseTableViewCell.m */,
+				04469FA320FDC83C00879CCE /* LCBaseNavigationController.h */,
+				04469FA220FDC83B00879CCE /* LCBaseNavigationController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -916,6 +952,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				452B133420561CAA000CC6F5 /* Foundation+Log.m in Sources */,
+				04469F9E20FDC7A400879CCE /* UIBezierPath+LC.m in Sources */,
 				045E6D8B20C4EC9900052E16 /* UIImageView+LC.m in Sources */,
 				04A5E69220A29B2C00BD7C90 /* MJRefreshAutoGifFooter.m in Sources */,
 				045E6D8420C4EC3300052E16 /* LCConsts.m in Sources */,
@@ -928,6 +965,7 @@
 				045F406D207C566000C20569 /* LCBaseRequest.m in Sources */,
 				045F405D207C4B3E00C20569 /* LCBaseViewController.m in Sources */,
 				04A5E69520A29B2C00BD7C90 /* MJRefreshBackGifFooter.m in Sources */,
+				04469FA120FDC7B500879CCE /* UIScrollView+LC.m in Sources */,
 				045E6D8020C4EC0000052E16 /* LCLoadingBox.m in Sources */,
 				045E6D8E20C4ECC300052E16 /* NSString+LC.m in Sources */,
 				04A5E69420A29B2C00BD7C90 /* MJRefreshAutoStateFooter.m in Sources */,
@@ -939,6 +977,7 @@
 				045E6D8720C4EC6900052E16 /* UIImage+LC.m in Sources */,
 				04A5E69C20A29B2C00BD7C90 /* MJRefreshConst.m in Sources */,
 				04A5E61620A2958400BD7C90 /* LCAppConfig.m in Sources */,
+				04469F9B20FDC79A00879CCE /* UIColor+LC.m in Sources */,
 				451D60482053B244004AC218 /* AppDelegate.m in Sources */,
 				04A5E69320A29B2C00BD7C90 /* MJRefreshAutoNormalFooter.m in Sources */,
 				04A5E61920A2976300BD7C90 /* LCViewController.m in Sources */,
@@ -953,6 +992,7 @@
 				04A5E68F20A29B2C00BD7C90 /* MJRefreshComponent.m in Sources */,
 				452B131D20561B13000CC6F5 /* UIAlertAction+LC.m in Sources */,
 				04A5E69E20A29B2C00BD7C90 /* UIScrollView+MJExtension.m in Sources */,
+				04469FA420FDC83C00879CCE /* LCBaseNavigationController.m in Sources */,
 				04A5E69820A29B2C00BD7C90 /* MJRefreshGifHeader.m in Sources */,
 				04A5E68D20A29B2C00BD7C90 /* MJRefreshAutoFooter.m in Sources */,
 				045F4060207C4B4D00C20569 /* LCBaseTableViewController.m in Sources */,

@@ -20,10 +20,12 @@
 #import "LCDefine.h"
 #import "LCAppConfig.h"
 #import "LCConsts.h"
+#import "LCBaseTableView.h"
 
 #import "LCPromptBox.h"
 #import "LCLoadingBox.h"
 
 #import "NSString+LC.h"
+#import "UIColor+LC.h"
 
 #endif /* PrefixHeader_pch */

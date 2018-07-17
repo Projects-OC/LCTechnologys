@@ -7,7 +7,6 @@
 //
 
 #import "LCBaseViewController.h"
-#import "LCBaseTableView.h"
 @class LCBaseRequest;
 @class LCBaseRequestModel;
 

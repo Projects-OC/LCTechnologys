@@ -17,6 +17,15 @@
 
 @implementation LCBaseTableViewController
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
 - (NSMutableArray *)datas{
     if (!_datas) {
         _datas = [[NSMutableArray alloc] init];

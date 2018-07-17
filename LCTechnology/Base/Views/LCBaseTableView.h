@@ -22,4 +22,14 @@
 
 @property (nonatomic,copy) void (^tapViewBlock)(void);
 
+/**
+ 注册cell
+ */
+- (void)registerClassCells:(NSArray <Class>*_Nullable)cells;
+
+/**
+ 注册header footer
+ */
+- (void)registerClassHeaderFooters:(NSArray <Class>*_Nullable)headerFooters;
+
 @end

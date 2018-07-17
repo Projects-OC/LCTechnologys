@@ -21,4 +21,8 @@
     // Configure the view for the selected state
 }
 
+- (void)dealloc{
+    LCLog(@"dealloc %s",__func__);
+}
+
 @end

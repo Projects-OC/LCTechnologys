@@ -8,6 +8,9 @@
 
 #import "LCBaseTableView.h"
 
+@interface LCBaseTableView ()
+@end
+
 @implementation LCBaseTableView
 
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -37,7 +40,6 @@
     self.emptyDataSetSource = self;
     self.emptyDataSetDelegate = self;
     
-    
     @weakify(self)
     LCAPPDELEGATE.networkStatusBlock = ^(YYReachabilityStatus networkStatus) {
         @strongify(self)
@@ -47,6 +49,18 @@
             self.emptyTitle = LCMessageNetworkError;
         }
     };
+}
+
+- (void)registerClassCells:(NSArray <Class>*_Nullable)cells {
+    [cells enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self registerClass:obj forCellReuseIdentifier:NSStringFromClass(obj)];
+    }];
+}
+
+- (void)registerClassHeaderFooters:(NSArray <Class>*_Nullable)headerFooters {
+    [headerFooters enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self registerClass:obj forHeaderFooterViewReuseIdentifier:NSStringFromClass(obj)];
+    }];
 }
 
 - (void)setLoading:(BOOL)loading{
