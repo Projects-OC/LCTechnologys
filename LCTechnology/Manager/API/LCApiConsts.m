@@ -8,13 +8,15 @@
 
 #import "LCApiConsts.h"
 
-/**
- */
+/**IP*/
 #ifdef DEBUG
-NSString *const LCBaseUrl = @"https://baidu.com/debug";
+NSString *const LCUrlBase = @"http://192.168.3.128/erp-tp/";
 #else
-NSString *const LCBaseUrl = @"https://baidu.com/relase";
+NSString *const LCUrlBase = @"";
 #endif
 
+/**目录*/
+NSString *const LCUrlIndexHome = @"index.php/home/";
+
 /**登录*/
-NSString *const LCLoginUrl = @"api/login";
+NSString *const LCUrlLogin = @"login/login";

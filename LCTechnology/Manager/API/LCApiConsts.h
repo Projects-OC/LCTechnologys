@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-UIKIT_EXTERN NSString *const LCBaseUrl;
+/**IP*/
+UIKIT_EXTERN NSString *const LCUrlBase;
+/**目录*/
+UIKIT_EXTERN NSString *const LCUrlIndexHome;
 
 /**登录*/
-UIKIT_EXTERN NSString *const LCLoginUrl;
+UIKIT_EXTERN NSString *const LCUrlLogin;

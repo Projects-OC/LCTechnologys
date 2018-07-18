@@ -12,7 +12,7 @@
 
 + (LCLoginRequest *)loginWithUserName:(NSString *)userName
                              passWord:(NSString *)passWord{
-    LCLoginRequest *request = [[LCLoginRequest alloc] initPOSTWithRequestUrl:LCLoginUrl];
+    LCLoginRequest *request = [[LCLoginRequest alloc] initPOSTWithRequestUrl:LCUrlLogin];
     [request.paramsDic setValue:userName forKey:NSStringFromSelector(@selector(userName))];
     [request.paramsDic setValue:passWord forKey:NSStringFromSelector(@selector(password))];
     return request;

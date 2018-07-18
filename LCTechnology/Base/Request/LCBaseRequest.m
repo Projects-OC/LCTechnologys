@@ -55,7 +55,7 @@
     if ([self.requestBaseUrl isNotBlank]) {
         return self.requestBaseUrl;
     }
-    return LCBaseUrl;
+    return [LCUrlBase stringByAppendingString:LCUrlIndexHome];
 }
 
 - (YTKRequestMethod)requestMethod{

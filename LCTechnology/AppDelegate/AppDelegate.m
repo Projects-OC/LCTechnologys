@@ -18,7 +18,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[YTKNetworkConfig sharedConfig] setBaseUrl:LCBaseUrl];
     [AppDelegate rootView];
     [self config];
     return YES;
