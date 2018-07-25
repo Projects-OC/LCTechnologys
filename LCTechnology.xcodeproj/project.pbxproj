@@ -24,6 +24,7 @@
 		045F4066207C4BA100C20569 /* LCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F4065207C4BA100C20569 /* LCBaseTableViewCell.m */; };
 		045F406A207C55AB00C20569 /* LCBaseRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F4069207C55AB00C20569 /* LCBaseRequestModel.m */; };
 		045F406D207C566000C20569 /* LCBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F406C207C566000C20569 /* LCBaseRequest.m */; };
+		049DCE1221081B1C00861249 /* NSDateFormatter+LC.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DCE1121081B1C00861249 /* NSDateFormatter+LC.m */; };
 		04A5E60F20A2927C00BD7C90 /* AppDelegate+Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5E60E20A2927C00BD7C90 /* AppDelegate+Controller.m */; };
 		04A5E61220A2930100BD7C90 /* LCLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5E61120A2930100BD7C90 /* LCLoginRequest.m */; };
 		04A5E61620A2958400BD7C90 /* LCAppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5E61520A2958400BD7C90 /* LCAppConfig.m */; };
@@ -114,6 +115,8 @@
 		045F4069207C55AB00C20569 /* LCBaseRequestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCBaseRequestModel.m; sourceTree = "<group>"; };
 		045F406B207C566000C20569 /* LCBaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCBaseRequest.h; sourceTree = "<group>"; };
 		045F406C207C566000C20569 /* LCBaseRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCBaseRequest.m; sourceTree = "<group>"; };
+		049DCE1021081B1C00861249 /* NSDateFormatter+LC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+LC.h"; sourceTree = "<group>"; };
+		049DCE1121081B1C00861249 /* NSDateFormatter+LC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+LC.m"; sourceTree = "<group>"; };
 		04A5E60D20A2927C00BD7C90 /* AppDelegate+Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Controller.h"; sourceTree = "<group>"; };
 		04A5E60E20A2927C00BD7C90 /* AppDelegate+Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Controller.m"; sourceTree = "<group>"; };
 		04A5E61020A2930100BD7C90 /* LCLoginRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCLoginRequest.h; sourceTree = "<group>"; };
@@ -274,6 +277,15 @@
 				045F4069207C55AB00C20569 /* LCBaseRequestModel.m */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		049DCE0F21081B1C00861249 /* NSDateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				049DCE1021081B1C00861249 /* NSDateFormatter+LC.h */,
+				049DCE1121081B1C00861249 /* NSDateFormatter+LC.m */,
+			);
+			path = NSDateFormatter;
 			sourceTree = "<group>";
 		};
 		04A5E60C20A2910B00BD7C90 /* ViewModels  */ = {
@@ -517,6 +529,7 @@
 		452B131620561A65000CC6F5 /* NSFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				049DCE0F21081B1C00861249 /* NSDateFormatter */,
 				452B132F20561C50000CC6F5 /* NSMutableAttributeString */,
 				452B132E20561C45000CC6F5 /* NSFileManager */,
 				452B132D20561C3B000CC6F5 /* NSArray */,
@@ -969,6 +982,7 @@
 				045E6D8020C4EC0000052E16 /* LCLoadingBox.m in Sources */,
 				045E6D8E20C4ECC300052E16 /* NSString+LC.m in Sources */,
 				04A5E69420A29B2C00BD7C90 /* MJRefreshAutoStateFooter.m in Sources */,
+				049DCE1221081B1C00861249 /* NSDateFormatter+LC.m in Sources */,
 				04A5E69920A29B2C00BD7C90 /* MJRefreshNormalHeader.m in Sources */,
 				04A5E6A020A29B2C00BD7C90 /* UIView+MJExtension.m in Sources */,
 				045F4063207C4B7100C20569 /* LCBaseTableView.m in Sources */,

@@ -18,7 +18,7 @@
     [super viewDidLoad];
 //    self.navigationBar.translucent = YES;
     UINavigationBar *bar = [UINavigationBar appearance];
-    bar.barTintColor = [UIColor blueColor];
+    [bar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
     bar.tintColor = [UIColor whiteColor];
     bar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],
                                 NSFontAttributeName:LCFont(18)};

@@ -41,4 +41,14 @@
  */
 + (NSString *)getCurrentTimestamp;
 
+/**
+ 小版本号
+ */
++ (NSString *)buildString;
+
+/**
+ 大版本号
+ */
++ (NSString *)versionString;
+
 @end

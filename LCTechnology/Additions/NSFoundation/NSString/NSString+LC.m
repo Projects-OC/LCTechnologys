@@ -7,6 +7,9 @@
 //
 
 #import "NSString+LC.h"
+#import "NSDateFormatter+LC.h"
+
+#define bundleInfo [[NSBundle mainBundle] infoDictionary]
 
 @implementation NSString (LC)
 
@@ -35,22 +38,16 @@
 }
 
 + (NSString *)stringFromDate:(NSDate *)date{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    return [formatter stringFromDate:date];
+    return [[NSDateFormatter dateFormatter] stringFromDate:date];
 }
 
 + (NSDate *)dateFromString:(NSString *)string{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    return [formatter dateFromString:string];
+    return [[NSDateFormatter dateFormatter] dateFromString:string];
 }
 
 + (NSString*)getCurrentTimes{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSDate *datenow = [NSDate date];
-    NSString *currentTimeString = [formatter stringFromDate:datenow];
+    NSString *currentTimeString = [[NSDateFormatter dateFormatter] stringFromDate:datenow];
     return currentTimeString;
 }
 
@@ -61,5 +58,14 @@
     timeString = [timeString stringByAppendingString:@"000"];//java13位
     return timeString;
 }
+
++ (NSString *)buildString {
+    return bundleInfo[(NSString *)kCFBundleVersionKey];
+}
+
++ (NSString *)versionString {
+    return bundleInfo[@"CFBundleShortVersionString"];
+}
+
 
 @end

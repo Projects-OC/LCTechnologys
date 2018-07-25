@@ -10,6 +10,6 @@
 
 @interface UIImage (LC)
 
-+ (UIImage *)resizeImage:(UIImage *)image;
++ (UIImage *)reSizeImage:(UIImage *)image reSize:(CGSize)reSize;
 
 @end
