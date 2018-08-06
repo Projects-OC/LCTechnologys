@@ -16,11 +16,11 @@
 @property(nonatomic,assign)CGFloat verticalOffset;
 
 /**空数据提示信息*/
-@property (nonatomic,copy) NSString *emptyTitle;
+@property (nonatomic,copy) NSString * _Nullable emptyTitle;
 
 @property (nonatomic, getter=isLoading) BOOL loading;
 
-@property (nonatomic,copy) void (^tapViewBlock)(void);
+@property (nonatomic,copy) void (^ _Nullable tapViewBlock)(void);
 
 /**
  注册cell

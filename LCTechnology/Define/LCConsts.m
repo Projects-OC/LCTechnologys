@@ -8,7 +8,8 @@
 
 #import "LCConsts.h"
 
-NSString *const LCNotificationArea = @"LCNotificationArea";
+NSNotificationName const LCNotificationStores = @"LCNotificationStores";
+
 
 NSString *const LCMessageEmpty = @"暂无数据";
 NSString *const LCMessageNetworkError = @"网络连接失败";

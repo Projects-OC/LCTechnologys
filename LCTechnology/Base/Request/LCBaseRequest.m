@@ -51,6 +51,16 @@
     return 30;
 }
 
+/**
+ 返回一个大于等于 0 的值，开启缓存
+ */
+- (NSInteger)cacheTimeInSeconds {
+    if (self.isCache) {
+        return NSIntegerMax;
+    }
+    return 0;
+}
+
 - (NSString *)baseUrl{
     if ([self.requestBaseUrl isNotBlank]) {
         return self.requestBaseUrl;
@@ -76,6 +86,11 @@
 
 - (void)requestWithSuccess:(void(^)(LCBaseRequestModel *baseModel,id responseJSONObject))success
                    failure:(void(^)(LCBaseRequestModel *baseModel))failure{
+    //先读取缓存数据
+    if ([self loadCacheWithError:nil] && self.isCache) {
+        LCBaseRequestModel *baseModel = [LCBaseRequestModel modelWithJSON:self.responseJSONObject];
+        !success?:success(baseModel,self.responseJSONObject);
+    }
     [self startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request){
         LCLog(@"%@",request);
         LCBaseRequestModel *baseModel = [LCBaseRequestModel modelWithJSON:request.responseJSONObject];

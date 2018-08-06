@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-UIKIT_EXTERN NSString *const LCNotificationArea;
+UIKIT_EXTERN NSNotificationName const LCNotificationStores;
+
 
 UIKIT_EXTERN NSString *const LCMessageEmpty;
 UIKIT_EXTERN NSString *const LCMessageNetworkError;

@@ -17,13 +17,16 @@
 /**请求序列化器类型*/
 @property (nonatomic,assign) YTKRequestSerializerType serializerType;
 
+/**是否先从缓存中读取数据，新数据请求完成，再替换*/
+@property (nonatomic,assign) BOOL isCache;
+
 /** url*/
 @property (nonatomic,copy) NSString *requestBaseUrl;
 
-/**post请求*/
+/**post*/
 - (instancetype)initPOSTWithRequestUrl:(NSString *)requestUrl;
 
-/**get请求*/
+/**get*/
 - (instancetype)initGETWithRequestUrl:(NSString *)requestUrl;
 
 /**自选请求类型*/
